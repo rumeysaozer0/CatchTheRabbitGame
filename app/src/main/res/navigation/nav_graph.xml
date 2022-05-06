@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.rumeysaozer.kusyakalamaoyunu.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_girisFragment2"
+            app:destination="@id/girisFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/girisFragment2"
+        android:name="com.rumeysaozer.kusyakalamaoyunu.GirisFragment"
+        android:label="fragment_giris"
+        tools:layout="@layout/fragment_giris" >
+        <action
+            android:id="@+id/action_girisFragment2_to_yakalamaFragment2"
+            app:destination="@id/yakalamaFragment" />
+        <action
+            android:id="@+id/action_girisFragment2_to_seviyeFragment"
+            app:destination="@id/seviyeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lastFragment"
+        android:name="com.rumeysaozer.kusyakalamaoyunu.LastFragment"
+        android:label="fragment_last"
+        tools:layout="@layout/fragment_last" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lastFragment_to_yakalamaFragment"
+            app:destination="@id/yakalamaFragment" />
+        <action
+            android:id="@+id/action_lastFragment_to_girisFragment2"
+            app:destination="@id/girisFragment2" />
+        <argument
+            android:name="skor"
+            app:argType="integer" />
+        <argument
+            android:name="mid"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_lastFragment_to_seviyeFragment"
+            app:destination="@id/seviyeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/yakalamaFragment"
+        android:name="com.rumeysaozer.kusyakalamaoyunu.YakalamaFragment"
+        android:label="fragment_yakalama"
+        tools:layout="@layout/fragment_yakalama" >
+        <action
+            android:id="@+id/action_yakalamaFragment_to_lastFragment2"
+            app:destination="@id/lastFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_yakalamaFragment_to_lastFragment3"
+            app:destination="@id/lastFragment" />
+        <argument
+            android:name="mid"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/seviyeFragment"
+        android:name="com.rumeysaozer.kusyakalamaoyunu.SeviyeFragment"
+        android:label="fragment_seviye"
+        tools:layout="@layout/fragment_seviye" >
+        <action
+            android:id="@+id/action_seviyeFragment_to_yakalamaFragment"
+            app:destination="@id/yakalamaFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
